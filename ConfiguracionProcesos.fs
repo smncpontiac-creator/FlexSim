@@ -10,63 +10,89 @@
 // 1. CONFIGURACIÓN DE CONEXIONES ENTRE OBJETOS
 // ============================================
 
+// Helper function para búsqueda segura de nodos
+treenode safeFind(string path) {
+    treenode result = node(path, model());
+    if (!objectexists(result)) {
+        print("ADVERTENCIA: No se encontró el nodo: " + path);
+        return NULL;
+    }
+    return result;
+}
+
 void setupConnections() {
     // Conexiones desde Source de Recepción
-    contextdragconnection(Model.find("Source_Recepcion"), Model.find("Queue_Recepcion"), "A");
+    treenode source = safeFind("Source_Recepcion");
+    treenode queueRec = safeFind("Queue_Recepcion");
+    if (source && queueRec) contextdragconnection(source, queueRec, "A");
 
     // Desde Queue Recepción hacia Racks (distribución inteligente)
-    contextdragconnection(Model.find("Queue_Recepcion"), Model.find("Rack_A1"), "A");
-    contextdragconnection(Model.find("Queue_Recepcion"), Model.find("Rack_A2"), "A");
-    contextdragconnection(Model.find("Queue_Recepcion"), Model.find("Rack_A3"), "A");
-    contextdragconnection(Model.find("Queue_Recepcion"), Model.find("Rack_A4"), "A");
-    contextdragconnection(Model.find("Queue_Recepcion"), Model.find("Rack_B1"), "A");
-    contextdragconnection(Model.find("Queue_Recepcion"), Model.find("Rack_B2"), "A");
-    contextdragconnection(Model.find("Queue_Recepcion"), Model.find("Rack_B3"), "A");
-    contextdragconnection(Model.find("Queue_Recepcion"), Model.find("Rack_B4"), "A");
-    contextdragconnection(Model.find("Queue_Recepcion"), Model.find("Rack_B5"), "A");
-    contextdragconnection(Model.find("Queue_Recepcion"), Model.find("Rack_B6"), "A");
-    contextdragconnection(Model.find("Queue_Recepcion"), Model.find("Rack_B7"), "A");
-    contextdragconnection(Model.find("Queue_Recepcion"), Model.find("Rack_B8"), "A");
-    contextdragconnection(Model.find("Queue_Recepcion"), Model.find("Rack_C1"), "A");
-    contextdragconnection(Model.find("Queue_Recepcion"), Model.find("Rack_C2"), "A");
-    contextdragconnection(Model.find("Queue_Recepcion"), Model.find("Rack_C3"), "A");
-    contextdragconnection(Model.find("Queue_Recepcion"), Model.find("Rack_C4"), "A");
+    if (queueRec) {
+        treenode rack;
+        rack = safeFind("Rack_A1"); if (rack) contextdragconnection(queueRec, rack, "A");
+        rack = safeFind("Rack_A2"); if (rack) contextdragconnection(queueRec, rack, "A");
+        rack = safeFind("Rack_A3"); if (rack) contextdragconnection(queueRec, rack, "A");
+        rack = safeFind("Rack_A4"); if (rack) contextdragconnection(queueRec, rack, "A");
+        rack = safeFind("Rack_B1"); if (rack) contextdragconnection(queueRec, rack, "A");
+        rack = safeFind("Rack_B2"); if (rack) contextdragconnection(queueRec, rack, "A");
+        rack = safeFind("Rack_B3"); if (rack) contextdragconnection(queueRec, rack, "A");
+        rack = safeFind("Rack_B4"); if (rack) contextdragconnection(queueRec, rack, "A");
+        rack = safeFind("Rack_B5"); if (rack) contextdragconnection(queueRec, rack, "A");
+        rack = safeFind("Rack_B6"); if (rack) contextdragconnection(queueRec, rack, "A");
+        rack = safeFind("Rack_B7"); if (rack) contextdragconnection(queueRec, rack, "A");
+        rack = safeFind("Rack_B8"); if (rack) contextdragconnection(queueRec, rack, "A");
+        rack = safeFind("Rack_C1"); if (rack) contextdragconnection(queueRec, rack, "A");
+        rack = safeFind("Rack_C2"); if (rack) contextdragconnection(queueRec, rack, "A");
+        rack = safeFind("Rack_C3"); if (rack) contextdragconnection(queueRec, rack, "A");
+        rack = safeFind("Rack_C4"); if (rack) contextdragconnection(queueRec, rack, "A");
+    }
 
     // Desde Racks hacia Zona de Packing Principal
-    contextdragconnection(Model.find("Rack_A1"), Model.find("Queue_PackingPrincipal"), "A");
-    contextdragconnection(Model.find("Rack_A2"), Model.find("Queue_PackingPrincipal"), "A");
-    contextdragconnection(Model.find("Rack_A3"), Model.find("Queue_PackingPrincipal"), "A");
-    contextdragconnection(Model.find("Rack_A4"), Model.find("Queue_PackingPrincipal"), "A");
-    contextdragconnection(Model.find("Rack_B1"), Model.find("Queue_PackingPrincipal"), "A");
-    contextdragconnection(Model.find("Rack_B2"), Model.find("Queue_PackingPrincipal"), "A");
-    contextdragconnection(Model.find("Rack_B3"), Model.find("Queue_PackingPrincipal"), "A");
-    contextdragconnection(Model.find("Rack_B4"), Model.find("Queue_PackingPrincipal"), "A");
-    contextdragconnection(Model.find("Rack_B5"), Model.find("Queue_PackingPrincipal"), "A");
-    contextdragconnection(Model.find("Rack_B6"), Model.find("Queue_PackingPrincipal"), "A");
-    contextdragconnection(Model.find("Rack_B7"), Model.find("Queue_PackingPrincipal"), "A");
-    contextdragconnection(Model.find("Rack_B8"), Model.find("Queue_PackingPrincipal"), "A");
-    contextdragconnection(Model.find("Rack_C1"), Model.find("Queue_PackingPrincipal"), "A");
-    contextdragconnection(Model.find("Rack_C2"), Model.find("Queue_PackingPrincipal"), "A");
-    contextdragconnection(Model.find("Rack_C3"), Model.find("Queue_PackingPrincipal"), "A");
-    contextdragconnection(Model.find("Rack_C4"), Model.find("Queue_PackingPrincipal"), "A");
+    treenode queuePacking = safeFind("Queue_PackingPrincipal");
+    if (queuePacking) {
+        treenode rack;
+        rack = safeFind("Rack_A1"); if (rack) contextdragconnection(rack, queuePacking, "A");
+        rack = safeFind("Rack_A2"); if (rack) contextdragconnection(rack, queuePacking, "A");
+        rack = safeFind("Rack_A3"); if (rack) contextdragconnection(rack, queuePacking, "A");
+        rack = safeFind("Rack_A4"); if (rack) contextdragconnection(rack, queuePacking, "A");
+        rack = safeFind("Rack_B1"); if (rack) contextdragconnection(rack, queuePacking, "A");
+        rack = safeFind("Rack_B2"); if (rack) contextdragconnection(rack, queuePacking, "A");
+        rack = safeFind("Rack_B3"); if (rack) contextdragconnection(rack, queuePacking, "A");
+        rack = safeFind("Rack_B4"); if (rack) contextdragconnection(rack, queuePacking, "A");
+        rack = safeFind("Rack_B5"); if (rack) contextdragconnection(rack, queuePacking, "A");
+        rack = safeFind("Rack_B6"); if (rack) contextdragconnection(rack, queuePacking, "A");
+        rack = safeFind("Rack_B7"); if (rack) contextdragconnection(rack, queuePacking, "A");
+        rack = safeFind("Rack_B8"); if (rack) contextdragconnection(rack, queuePacking, "A");
+        rack = safeFind("Rack_C1"); if (rack) contextdragconnection(rack, queuePacking, "A");
+        rack = safeFind("Rack_C2"); if (rack) contextdragconnection(rack, queuePacking, "A");
+        rack = safeFind("Rack_C3"); if (rack) contextdragconnection(rack, queuePacking, "A");
+        rack = safeFind("Rack_C4"); if (rack) contextdragconnection(rack, queuePacking, "A");
+    }
 
     // Desde Queue Merma hacia Packing (prioridad)
-    contextdragconnection(Model.find("Queue_Merma"), Model.find("Queue_PackingPrincipal"), "A");
+    treenode queueMerma = safeFind("Queue_Merma");
+    if (queueMerma && queuePacking) contextdragconnection(queueMerma, queuePacking, "A");
 
     // Desde Packing Principal hacia Procesador
-    contextdragconnection(Model.find("Queue_PackingPrincipal"), Model.find("Processor_Packing"), "A");
+    treenode processor = safeFind("Processor_Packing");
+    if (queuePacking && processor) contextdragconnection(queuePacking, processor, "A");
 
     // Desde Procesador hacia Salida
-    contextdragconnection(Model.find("Processor_Packing"), Model.find("Sink_Salida"), "A");
+    treenode sink = safeFind("Sink_Salida");
+    if (processor && sink) contextdragconnection(processor, sink, "A");
 
     // Desde Racks hacia Packing Alternativo (para pedidos grandes)
-    contextdragconnection(Model.find("Rack_A1"), Model.find("Queue_PackingAlternativo"), "A");
-    contextdragconnection(Model.find("Rack_A2"), Model.find("Queue_PackingAlternativo"), "A");
-    contextdragconnection(Model.find("Rack_A3"), Model.find("Queue_PackingAlternativo"), "A");
-    contextdragconnection(Model.find("Rack_A4"), Model.find("Queue_PackingAlternativo"), "A");
+    treenode queueAlt = safeFind("Queue_PackingAlternativo");
+    if (queueAlt) {
+        treenode rack;
+        rack = safeFind("Rack_A1"); if (rack) contextdragconnection(rack, queueAlt, "A");
+        rack = safeFind("Rack_A2"); if (rack) contextdragconnection(rack, queueAlt, "A");
+        rack = safeFind("Rack_A3"); if (rack) contextdragconnection(rack, queueAlt, "A");
+        rack = safeFind("Rack_A4"); if (rack) contextdragconnection(rack, queueAlt, "A");
+    }
 
     // Desde Packing Alternativo hacia Salida
-    contextdragconnection(Model.find("Queue_PackingAlternativo"), Model.find("Sink_Salida"), "A");
+    if (queueAlt && sink) contextdragconnection(queueAlt, sink, "A");
 }
 
 // ============================================
@@ -80,37 +106,37 @@ Object determinarRackDestino(Object item) {
 
     // REGLA 1: Si el pallet viene de MERMA, va directo a packing
     if (item.getLabel("origen", "") == "MERMA") {
-        return Model.find("Queue_PackingPrincipal");
+        return safeFind("Queue_PackingPrincipal");
     }
 
     // REGLA 2: Distribución por categoría
-    if (categoria == "BLUSA_OUTDOOR") return Model.find("Rack_B1");
-    if (categoria == "PARKA_NEW") return Model.find("Rack_B2");
-    if (categoria == "CAMISA_OUTDOOR") return Model.find("Rack_B3");
+    if (categoria == "BLUSA_OUTDOOR") return safeFind("Rack_B1");
+    if (categoria == "PARKA_NEW") return safeFind("Rack_B2");
+    if (categoria == "CAMISA_OUTDOOR") return safeFind("Rack_B3");
     if (categoria == "HOMBRE") {
         // Distribuir entre racks de hombre
         double random = uniform(0, 1);
-        if (random < 0.33) return Model.find("Rack_B4");
-        else if (random < 0.67) return Model.find("Rack_B7");
-        else return Model.find("Rack_B8");
+        if (random < 0.33) return safeFind("Rack_B4");
+        else if (random < 0.67) return safeFind("Rack_B7");
+        else return safeFind("Rack_B8");
     }
     if (categoria == "MUJER") {
         // Distribuir entre racks de mujer
         double random = uniform(0, 1);
-        if (random < 0.5) return Model.find("Rack_B5");
-        else return Model.find("Rack_B6");
+        if (random < 0.5) return safeFind("Rack_B5");
+        else return safeFind("Rack_B6");
     }
 
     // REGLA 3: Picking rápido para alta rotación
     if (item.getLabel("rotacion", "") == "ALTA") {
         int racknum = duniform(1, 4);
-        return Model.find("Rack_C" + string.fromNum(racknum));
+        return safeFind("Rack_C" + string.fromNum(racknum));
     }
 
     // REGLA 4: Almacenamiento masivo (racks grandes)
     // Distribuir entre los 4 racks tipo A
     int racknum = duniform(1, 4);
-    return Model.find("Rack_A" + string.fromNum(racknum));
+    return safeFind("Rack_A" + string.fromNum(racknum));
 }
 
 // ============================================
@@ -124,13 +150,15 @@ Object asignarEquipamiento(Object item, Object destino) {
 
     // REGLA 1: Apiladoras para niveles altos (> 2.5m)
     if (altura > 2.5) {
-        return Model.find("TaskExecuter_Apiladora");
+        return safeFind("TaskExecuter_Apiladora");
     }
 
     // REGLA 2: Transpaletas para niveles bajos
     // Seleccionar la transpaleta más cercana disponible
-    Object tp1 = Model.find("Operator_Transpaleta1");
-    Object tp2 = Model.find("Operator_Transpaleta2");
+    Object tp1 = safeFind("Operator_Transpaleta1");
+    Object tp2 = safeFind("Operator_Transpaleta2");
+
+    if (!tp1 || !tp2) return tp1 ? tp1 : tp2;
 
     double dist1 = distancefrom(tp1, item);
     double dist2 = distancefrom(tp2, item);
@@ -146,7 +174,9 @@ Object asignarEquipamiento(Object item, Object destino) {
 // Esta función decide si activar el packing alternativo
 int activarPackingAlternativo() {
     // Contar pallets en cola de packing principal
-    Object queuePrincipal = Model.find("Queue_PackingPrincipal");
+    Object queuePrincipal = safeFind("Queue_PackingPrincipal");
+    if (!queuePrincipal) return 0;
+
     int numPallets = queuePrincipal.subnodes.length;
 
     // REGLA: Activar si hay más de 15 pallets esperando
@@ -156,7 +186,10 @@ int activarPackingAlternativo() {
 
     // REGLA 2: Activar si hay pedidos grandes (> 200 cajas)
     // Esto se simularía con una variable global o label
-    int cajasEnPedido = Model.getVariable("cajas_pedido_actual", 0);
+    treenode varNode = node("?variables/cajas_pedido_actual", model());
+    int cajasEnPedido = 0;
+    if (objectexists(varNode)) cajasEnPedido = varNode.value;
+
     if (cajasEnPedido > 200) {
         return 1;  // Activado
     }
@@ -170,7 +203,8 @@ int activarPackingAlternativo() {
 
 // Esta función gestiona la revisión de merma antes de picking
 int verificarDisponibilidadEnMerma(string producto) {
-    Object queueMerma = Model.find("Queue_Merma");
+    Object queueMerma = safeFind("Queue_Merma");
+    if (!queueMerma) return 0;
 
     // Buscar en la cola de merma si hay el producto solicitado
     for (int i = 1; i <= queueMerma.subnodes.length; i++) {
@@ -189,37 +223,59 @@ int verificarDisponibilidadEnMerma(string producto) {
 
 void calcularKPIs() {
     // Throughput (pallets procesados por hora)
-    double tiempoSimulacion = Model.time / 3600;  // Convertir a horas
-    int palletsProcesados = Model.find("Sink_Salida").getStatNum("Input");
-    double throughput = palletsProcesados / tiempoSimulacion;
+    double tiempoSimulacion = model().time / 3600;  // Convertir a horas
+    Object sink = safeFind("Sink_Salida");
+    if (!sink) {
+        print("ERROR: No se puede calcular KPIs - Sink_Salida no encontrado");
+        return;
+    }
+
+    int palletsProcesados = sink.getStatNum("Input");
+    double throughput = (tiempoSimulacion > 0) ? palletsProcesados / tiempoSimulacion : 0;
 
     // Utilización de racks
     double utilizacionRacks = 0;
-    int numRacks = 16;  // 4 tipo A + 8 tipo B + 4 tipo C
+    int numRacksValidos = 0;
 
     for (int i = 1; i <= 4; i++) {
-        Object rack = Model.find("Rack_A" + string.fromNum(i));
-        utilizacionRacks += rack.subnodes.length / rack.getVariable("capacity", 24);
+        Object rack = safeFind("Rack_A" + string.fromNum(i));
+        if (rack && objectexists(rack)) {
+            treenode capNode = node("?capacity", rack);
+            double cap = objectexists(capNode) ? capNode.value : 24;
+            utilizacionRacks += rack.subnodes.length / cap;
+            numRacksValidos++;
+        }
     }
     for (int i = 1; i <= 8; i++) {
-        Object rack = Model.find("Rack_B" + string.fromNum(i));
-        utilizacionRacks += rack.subnodes.length / rack.getVariable("capacity", 12);
+        Object rack = safeFind("Rack_B" + string.fromNum(i));
+        if (rack && objectexists(rack)) {
+            treenode capNode = node("?capacity", rack);
+            double cap = objectexists(capNode) ? capNode.value : 12;
+            utilizacionRacks += rack.subnodes.length / cap;
+            numRacksValidos++;
+        }
     }
     for (int i = 1; i <= 4; i++) {
-        Object rack = Model.find("Rack_C" + string.fromNum(i));
-        utilizacionRacks += rack.subnodes.length / rack.getVariable("capacity", 6);
+        Object rack = safeFind("Rack_C" + string.fromNum(i));
+        if (rack && objectexists(rack)) {
+            treenode capNode = node("?capacity", rack);
+            double cap = objectexists(capNode) ? capNode.value : 6;
+            utilizacionRacks += rack.subnodes.length / cap;
+            numRacksValidos++;
+        }
     }
 
-    utilizacionRacks = (utilizacionRacks / numRacks) * 100;
+    utilizacionRacks = (numRacksValidos > 0) ? (utilizacionRacks / numRacksValidos) * 100 : 0;
 
     // Tiempo promedio en sistema
-    double tiempoPromedio = Model.find("Sink_Salida").getStatNum("Staytime");
+    double tiempoPromedio = sink.getStatNum("Staytime");
 
     // Imprimir resultados
     print("======== KPIs BODEGA TEXTIL ========");
     print("Throughput: " + string.fromNum(throughput) + " pallets/hora");
     print("Utilización de Racks: " + string.fromNum(utilizacionRacks) + "%");
     print("Tiempo promedio en sistema: " + string.fromNum(tiempoPromedio/60) + " minutos");
+    print("Racks válidos encontrados: " + string.fromNum(numRacksValidos));
     print("====================================");
 }
 
@@ -234,8 +290,22 @@ void inicializarModelo() {
     setupConnections();
 
     // Configurar variables globales
-    Model.setVariable("cajas_pedido_actual", 0);
-    Model.setVariable("modo_packing_alternativo", 0);
+    treenode varsNode = node("?variables", model());
+    if (!objectexists(varsNode)) {
+        varsNode = createnode("variables", model());
+    }
+
+    treenode varNode = node("?cajas_pedido_actual", varsNode);
+    if (!objectexists(varNode)) {
+        varNode = createcoupling("cajas_pedido_actual", varsNode);
+    }
+    varNode.value = 0;
+
+    varNode = node("?modo_packing_alternativo", varsNode);
+    if (!objectexists(varNode)) {
+        varNode = createcoupling("modo_packing_alternativo", varsNode);
+    }
+    varNode.value = 0;
 
     // Configurar labels iniciales en pallets
     // Esto se hará en el evento OnCreation del Source

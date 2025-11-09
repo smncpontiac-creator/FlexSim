@@ -3,6 +3,91 @@ tree MainTree {
         tree windowmenu {
         }
     }
+    tree view {
+        tree active {
+            tree MainPanel {
+                tree RunPanel {
+                    tree "Time Block" {
+                        tree hotlinkx {
+                            string code: "// Time block hotlink\nreturn 0;"
+                        }
+                    }
+                    tree ScrollBarPanel {
+                        tree ScrollBar {
+                            tree hotlinkx {
+                                string code: "// Scrollbar hotlink\nreturn 0;"
+                            }
+                        }
+                        tree RunSpeed {
+                            tree hotlinkx {
+                                string code: "// Run speed hotlink\nreturn 0;"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        tree nodefunctions {
+            tree menucommands {
+                tree Window {
+                    tree opendefaultworkspace {
+                        string code: "// Open default workspace\ntreenode workspace = node(\"?defaultworkspace\", view());\nif(objectexists(workspace)) { return 1; }\nreturn 0;"
+                    }
+                }
+            }
+            tree Templates {
+                tree populatetemplatelibrary {
+                    string code: "// Populate template library\ntreenode lib = node(\"?templatelibrary\", view());\nif(objectexists(lib)) { return 1; }\nreturn 0;"
+                }
+            }
+        }
+    }
+    tree project {
+        tree exec {
+            tree globals {
+                tree nodefunctions {
+                    tree updatemodelversion {
+                        string cppcode: ""
+                        string code: "// Version update handler\nreturn 0;"
+                    }
+                }
+            }
+        }
+        tree events {
+            tree OnOpenModel {
+                tree version_update_1 {
+                    string code: "// Model version compatibility check\nreturn 0;"
+                }
+                tree load_snap_database {
+                    string code: "// Load snapshot database if exists\ntreenode db = node(\"?snapdatabase\", model());\nif(objectexists(db)) { return 1; }\nreturn 0;"
+                }
+                tree read_model_settings {
+                    string code: "// Read model settings\ntreenode settings = node(\"?ModelSettings\", model());\nif(objectexists(settings)) { return 1; }\nreturn 0;"
+                }
+                tree set_default_runspeed {
+                    string code: "// Set default run speed\ntreenode speedNode = node(\"?ModelSettings/variables/runspeed\", model());\nif(objectexists(speedNode)) {\n    double speed = speedNode.value;\n}\nreturn 0;"
+                }
+                tree load_environment {
+                    string code: "// Load environment settings\nreturn 0;"
+                }
+                tree add_people_flows {
+                    string code: "// Add people flows module if available\nreturn 0;"
+                }
+                tree restore_chart_templates {
+                    string code: "// Restore chart templates\ntreenode templates = node(\"?charttemplates\", model());\nif(objectexists(templates)) { return 1; }\nreturn 0;"
+                }
+            }
+            tree OnModelReset {
+                string code: "#include \"ConfiguracionProcesos.fs\"\nOnModelReset();"
+            }
+            tree OnRunStart {
+                string code: "#include \"ConfiguracionProcesos.fs\"\nOnRunStart();"
+            }
+            tree OnRunStop {
+                string code: "#include \"ConfiguracionProcesos.fs\"\nOnRunStop();"
+            }
+        }
+    }
     tree model {
         tree ModelSettings {
             int units: 1  // Metric
