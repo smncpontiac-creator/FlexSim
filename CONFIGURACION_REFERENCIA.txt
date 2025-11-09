@@ -1,0 +1,314 @@
+═══════════════════════════════════════════════════════════════════
+     CONFIGURACIÓN DE REFERENCIA - BODEGA TEXTIL 25x15m
+     FlexSim 25.2.0 - Versión Gratuita
+═══════════════════════════════════════════════════════════════════
+
+IMPORTANTE:
+El archivo BodegaTextil.fsm tiene problemas de compatibilidad con FlexSim 25.2.0.
+Use INSTRUCCIONES_CONSTRUCCION_MODELO.md para construir el modelo paso a paso.
+
+═══════════════════════════════════════════════════════════════════
+CONFIGURACIÓN DEL MODELO
+═══════════════════════════════════════════════════════════════════
+
+Units: Metric (metros, kilogramos)
+Time Units: Seconds
+Stop Time: 28800 (8 horas)
+Warmup Time: 0
+Run Speed: 1x
+
+═══════════════════════════════════════════════════════════════════
+PISO / FLOOR
+═══════════════════════════════════════════════════════════════════
+
+Name: Floor_Bodega
+Position: (12.5, 7.5, 0)
+Size: 25m x 15m x 0.1m
+Color: Gray (0x808080)
+
+═══════════════════════════════════════════════════════════════════
+ZONA DE ENTRADA
+═══════════════════════════════════════════════════════════════════
+
+1. SOURCE (Recepción)
+   Name: Source_Recepcion
+   Position: (2, 7.5, 0)
+   Inter-Arrival Time: 300 segundos (1 pallet cada 5 min)
+   Item Type: Pallet
+
+2. QUEUE (Recepción)
+   Name: Queue_Recepcion
+   Position: (4, 7.5, 0)
+   Size: 4m x 3m x 1m
+   Max Content: 20 pallets
+   Color: Yellow (0xFFFF00)
+
+═══════════════════════════════════════════════════════════════════
+RACKS TIPO A - ALMACENAMIENTO MASIVO (6 metros)
+═══════════════════════════════════════════════════════════════════
+
+Ubicación: Fondo de la bodega
+Size: 6m x 1.2m x 4m (altura)
+Levels: 4
+Bays: 6
+Capacidad: 24 pallets cada uno
+Columnas: Blue (0x0000FF)
+Vigas: Yellow (0xFFFF00)
+
+Rack_A1: Position (22, 3, 0)
+Rack_A2: Position (22, 6, 0)
+Rack_A3: Position (22, 9, 0)
+Rack_A4: Position (22, 12, 0)
+
+TOTAL: 96 pallets
+
+═══════════════════════════════════════════════════════════════════
+RACKS TIPO B - ALMACENAMIENTO CATEGORIZADO (3 metros)
+═══════════════════════════════════════════════════════════════════
+
+Ubicación: Centro y laterales
+Size: 3m x 1.2m x 3.5m (altura)
+Levels: 4
+Bays: 3
+Capacidad: 12 pallets cada uno
+Columnas: Blue (0x0000FF)
+Vigas: Orange (0xFF8000)
+
+Rack_B1: Position (12, 2, 0)   - Categoría: BLUSA_OUTDOOR
+Rack_B2: Position (12, 5, 0)   - Categoría: PARKA_NEW
+Rack_B3: Position (12, 8, 0)   - Categoría: CAMISA_OUTDOOR
+Rack_B4: Position (12, 11, 0)  - Categoría: HOMBRE
+
+Rack_B5: Position (17, 2, 0)   - Categoría: MUJER
+Rack_B6: Position (17, 5, 0)   - Categoría: MUJER
+Rack_B7: Position (17, 8, 0)   - Categoría: HOMBRE
+Rack_B8: Position (17, 11, 0)  - Categoría: HOMBRE
+
+TOTAL: 96 pallets
+
+═══════════════════════════════════════════════════════════════════
+RACKS TIPO C - PICKING RÁPIDO (2 metros)
+═══════════════════════════════════════════════════════════════════
+
+Ubicación: Zona central
+Size: 2m x 1m x 2.5m (altura)
+Levels: 3
+Bays: 2
+Capacidad: 6 pallets cada uno
+Columnas: Blue (0x0000FF)
+Vigas: Orange (0xFF8000)
+Función: Alta rotación
+
+Rack_C1: Position (8, 3, 0)
+Rack_C2: Position (8, 6, 0)
+Rack_C3: Position (8, 9, 0)
+Rack_C4: Position (8, 12, 0)
+
+TOTAL: 24 pallets
+
+═══════════════════════════════════════════════════════════════════
+RESUMEN DE CAPACIDAD
+═══════════════════════════════════════════════════════════════════
+
+Racks Tipo A: 96 pallets
+Racks Tipo B: 96 pallets
+Racks Tipo C: 24 pallets
+─────────────────────────
+TOTAL: 216 pallets
+
+═══════════════════════════════════════════════════════════════════
+ZONA DE PACKING PRINCIPAL
+═══════════════════════════════════════════════════════════════════
+
+1. QUEUE (Packing Principal)
+   Name: Queue_PackingPrincipal
+   Position: (6, 7.5, 0)
+   Size: 4m x 3m x 1m
+   Max Content: 8 pallets
+   Color: Green (0x00FF00)
+   Estado: Siempre activa
+
+2. PROCESSOR (Packing)
+   Name: Processor_Packing
+   Position: (6, 7.5, 0)
+   Size: 2m x 2m x 1m
+   Process Time: 600 segundos (10 minutos)
+   Color: Green (0x00FF00)
+
+═══════════════════════════════════════════════════════════════════
+ZONA DE PACKING ALTERNATIVA
+═══════════════════════════════════════════════════════════════════
+
+QUEUE (Packing Alternativo)
+Name: Queue_PackingAlternativo
+Position: (6, 12, 0)
+Size: 3m x 2.5m x 1m
+Max Content: 6 pallets
+Color: Cyan (0x00FFFF)
+Activación: pedidos > 15 pallets O > 200 cajas
+
+═══════════════════════════════════════════════════════════════════
+ZONA DE MERMA
+═══════════════════════════════════════════════════════════════════
+
+QUEUE (Merma/Devoluciones)
+Name: Queue_Merma
+Position: (23, 14, 0)
+Size: 2m x 1.5m x 1m
+Max Content: 30 cajas
+Color: Red (0xFF0000)
+PRIORIDAD: Se revisa PRIMERO antes de hacer picking en racks
+
+═══════════════════════════════════════════════════════════════════
+EQUIPAMIENTO
+═══════════════════════════════════════════════════════════════════
+
+1. APILADORA ELÉCTRICA (TaskExecuter)
+   Name: Apiladora_Electrica
+   Position: (10, 7.5, 0)
+   Size: 1.2m x 0.7m x 2m
+   Speed: 1.5 m/s
+   Load Time: 30 segundos
+   Unload Time: 30 segundos
+   Capacity: 1500 kg
+   Color: Magenta (0xFF00FF)
+   Uso: Niveles > 2.5m de altura
+
+2. TRANSPALETA MANUAL 1 (Operator)
+   Name: Transpaleta_1
+   Position: (7, 7.5, 0)
+   Size: 0.5m x 0.5m x 1.7m
+   Speed: 1.0 m/s
+   Load Time: 20 segundos
+   Unload Time: 20 segundos
+   Color: Cyan (0x00FFFF)
+   Uso: Niveles ≤ 2.5m de altura
+
+3. TRANSPALETA MANUAL 2 (Operator)
+   Name: Transpaleta_2
+   Position: (9, 7.5, 0)
+   Size: 0.5m x 0.5m x 1.7m
+   Speed: 1.0 m/s
+   Load Time: 20 segundos
+   Unload Time: 20 segundos
+   Color: Cyan (0x00FFFF)
+   Uso: Niveles ≤ 2.5m de altura
+
+═══════════════════════════════════════════════════════════════════
+ZONA DE SALIDA
+═══════════════════════════════════════════════════════════════════
+
+SINK (Salida)
+Name: Sink_Salida
+Position: (2, 10, 0)
+Size: 1m x 1m x 1m
+Color: Red (0xFF0000)
+
+═══════════════════════════════════════════════════════════════════
+LÓGICA DE DISTRIBUCIÓN (FlexScript)
+═══════════════════════════════════════════════════════════════════
+
+SOURCE - On Creation:
+──────────────────────────────────────────────────────────────────
+// Asignar tipo de producto
+item.Type = duniform(1, 5); // 5 tipos diferentes
+
+// Asignar etiquetas
+if (item.Type == 1) item.label = "HOMBRE";
+else if (item.Type == 2) item.label = "MUJER";
+else if (item.Type == 3) item.label = "BLUSA_OUTDOOR";
+else if (item.Type == 4) item.label = "PARKA_NEW";
+else if (item.Type == 5) item.label = "CAMISA_OUTDOOR";
+
+// Alta rotación (25% de probabilidad)
+if (duniform(1, 4) == 1) {
+    item.AltaRotacion = 1;
+} else {
+    item.AltaRotacion = 0;
+}
+
+return 1;
+──────────────────────────────────────────────────────────────────
+
+QUEUE_RECEPCION - Send To Port:
+──────────────────────────────────────────────────────────────────
+// Prioridad 1: Alta rotación → Racks C (picking rápido)
+if (item.AltaRotacion == 1) {
+    return duniform(1, 4); // Racks C1-C4
+}
+
+// Prioridad 2: Por categoría
+string categoria = item.label;
+
+if (categoria == "BLUSA_OUTDOOR") return 5; // Rack B1
+if (categoria == "PARKA_NEW") return 6; // Rack B2
+if (categoria == "CAMISA_OUTDOOR") return 7; // Rack B3
+if (categoria == "HOMBRE") return duniform(8, 10); // B4, B7, B8
+if (categoria == "MUJER") return duniform(11, 12); // B5, B6
+
+// Prioridad 3: Almacenamiento masivo
+return duniform(13, 16); // Racks A1-A4
+──────────────────────────────────────────────────────────────────
+
+═══════════════════════════════════════════════════════════════════
+CONEXIONES (Press 'A' para conectar)
+═══════════════════════════════════════════════════════════════════
+
+Source_Recepcion → Queue_Recepcion
+
+Queue_Recepcion → Rack_C1
+Queue_Recepcion → Rack_C2
+Queue_Recepcion → Rack_C3
+Queue_Recepcion → Rack_C4
+Queue_Recepcion → Rack_B1
+Queue_Recepcion → Rack_B2
+Queue_Recepcion → Rack_B3
+Queue_Recepcion → Rack_B4
+Queue_Recepcion → Rack_B5
+Queue_Recepcion → Rack_B6
+Queue_Recepcion → Rack_B7
+Queue_Recepcion → Rack_B8
+Queue_Recepcion → Rack_A1
+Queue_Recepcion → Rack_A2
+Queue_Recepcion → Rack_A3
+Queue_Recepcion → Rack_A4
+
+Todos los Racks → Queue_PackingPrincipal
+Queue_PackingPrincipal → Processor_Packing
+Processor_Packing → Sink_Salida
+
+═══════════════════════════════════════════════════════════════════
+KPIs A MEDIR
+═══════════════════════════════════════════════════════════════════
+
+1. Throughput: Pallets procesados por hora
+2. Utilización de Racks: % de ocupación promedio
+3. Tiempo en Sistema: Desde entrada hasta salida
+4. Utilización de Equipamiento: % tiempo ocupado
+5. Tiempo en Queue: Espera en cada zona
+
+═══════════════════════════════════════════════════════════════════
+ESCENARIOS DE SIMULACIÓN RECOMENDADOS
+═══════════════════════════════════════════════════════════════════
+
+Escenario 1: OPERACIÓN NORMAL
+- Tiempo: 8 horas (28800 seg)
+- Arribo: 1 pallet cada 5 minutos (300 seg)
+- Esperado: ~96 pallets procesados
+
+Escenario 2: ALTA DEMANDA
+- Tiempo: 8 horas
+- Arribo: 1 pallet cada 3 minutos (180 seg)
+- Observar: Activación de packing alternativo
+
+Escenario 3: ANÁLISIS DE CUELLOS DE BOTELLA
+- Tiempo: 4 horas (14400 seg)
+- Arribo: 1 pallet cada 2 minutos (120 seg)
+- Identificar: Limitaciones de equipamiento
+
+═══════════════════════════════════════════════════════════════════
+FIN DE LA CONFIGURACIÓN
+═══════════════════════════════════════════════════════════════════
+
+Para construir este modelo en FlexSim 25.2.0:
+Siga las instrucciones en: INSTRUCCIONES_CONSTRUCCION_MODELO.md

@@ -1,0 +1,25 @@
+Model
+{
+	Name: Bodega Textil 25x15m
+	Description: Modelo de bodega de distribución textil
+	Version: 25.2.0
+	Units: Metric
+	TimeUnits: Seconds
+
+	Settings {
+		StopTime: 28800
+		WarmupTime: 0
+		RunSpeed: 1
+	}
+
+	// Este es un modelo simplificado
+	// Para construir el modelo completo, siga las instrucciones en:
+	// INSTRUCCIONES_CONSTRUCCION_MODELO.md
+
+	// NOTA IMPORTANTE:
+	// FlexSim 25.2.0 requiere que los modelos se construyan usando la interfaz gráfica
+	// o se exporten desde plantillas oficiales.
+	//
+	// Este archivo sirve como referencia de configuración.
+	// Use la GUI de FlexSim para construir el modelo siguiendo la guía paso a paso.
+}
