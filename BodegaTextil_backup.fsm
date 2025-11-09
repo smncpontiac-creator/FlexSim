@@ -1,0 +1,599 @@
+tree MainTree {
+    tree gui {
+        tree windowmenu {
+        }
+    }
+    tree model {
+        tree ModelSettings {
+            int units: 1  // Metric
+            int timeunits: 1  // Seconds
+            tree spatial {
+                num x: 0
+                num y: 0
+                num z: 0
+                num rx: 0
+                num ry: 0
+                num rz: 0
+            }
+            tree variables {
+                num warmuptime: 0
+                num runspeed: 1
+                num stoptime: 28800  // 8 hours simulation
+            }
+        }
+
+        // FLOOR (Piso de la bodega - 25m x 15m)
+        tree Floor {
+            int objectfocus: 1
+            tree spatial {
+                num x: 12.5
+                num y: 7.5
+                num z: 0
+                num sx: 25
+                num sy: 15
+                num sz: 0.1
+            }
+            tree variables {
+                string colorcode: "0x808080FF"  // Gray floor
+            }
+        }
+
+        // ============================================
+        // ZONA DE ENTRADA/SALIDA
+        // ============================================
+        tree Source_Recepcion {
+            int objectfocus: 2
+            string class: "Source"
+            tree spatial {
+                num x: 2
+                num y: 7.5
+                num z: 0
+                num sx: 1
+                num sy: 1
+                num sz: 1
+            }
+            tree variables {
+                num interarrivaltime: 300  // Un pallet cada 5 minutos
+                string itemtype: "Pallet"
+            }
+        }
+
+        tree Queue_Recepcion {
+            int objectfocus: 3
+            string class: "Queue"
+            tree spatial {
+                num x: 4
+                num y: 7.5
+                num z: 0
+                num sx: 4
+                num sy: 3
+                num sz: 1
+            }
+            tree variables {
+                num maxcontent: 20
+                string colorcode: "0xFFFF00FF"  // Yellow zone
+            }
+        }
+
+        // ============================================
+        // RACKS TIPO A (6 metros) - FONDO DE BODEGA
+        // ============================================
+        tree Rack_A1 {
+            int objectfocus: 10
+            string class: "Rack"
+            tree spatial {
+                num x: 22
+                num y: 3
+                num z: 0
+                num sx: 6
+                num sy: 1.2
+                num sz: 4
+            }
+            tree variables {
+                num numlevels: 4
+                num numbays: 6
+                num capacity: 24
+                string colorcode: "0x0000FFFF"  // Blue columns
+                string levelcolor: "0xFFFF00FF"  // Yellow beams
+                string category: "ALMACENAMIENTO_MASIVO"
+            }
+        }
+
+        tree Rack_A2 {
+            int objectfocus: 11
+            string class: "Rack"
+            tree spatial {
+                num x: 22
+                num y: 6
+                num z: 0
+                num sx: 6
+                num sy: 1.2
+                num sz: 4
+            }
+            tree variables {
+                num numlevels: 4
+                num numbays: 6
+                num capacity: 24
+                string colorcode: "0x0000FFFF"
+                string levelcolor: "0xFFFF00FF"
+                string category: "ALMACENAMIENTO_MASIVO"
+            }
+        }
+
+        tree Rack_A3 {
+            int objectfocus: 12
+            string class: "Rack"
+            tree spatial {
+                num x: 22
+                num y: 9
+                num z: 0
+                num sx: 6
+                num sy: 1.2
+                num sz: 4
+            }
+            tree variables {
+                num numlevels: 4
+                num numbays: 6
+                num capacity: 24
+                string colorcode: "0x0000FFFF"
+                string levelcolor: "0xFFFF00FF"
+                string category: "ALMACENAMIENTO_MASIVO"
+            }
+        }
+
+        tree Rack_A4 {
+            int objectfocus: 13
+            string class: "Rack"
+            tree spatial {
+                num x: 22
+                num y: 12
+                num z: 0
+                num sx: 6
+                num sy: 1.2
+                num sz: 4
+            }
+            tree variables {
+                num numlevels: 4
+                num numbays: 6
+                num capacity: 24
+                string colorcode: "0x0000FFFF"
+                string levelcolor: "0xFFFF00FF"
+                string category: "ALMACENAMIENTO_MASIVO"
+            }
+        }
+
+        // ============================================
+        // RACKS TIPO B (3 metros) - CENTRO Y LATERALES
+        // ============================================
+        tree Rack_B1 {
+            int objectfocus: 20
+            string class: "Rack"
+            tree spatial {
+                num x: 12
+                num y: 2
+                num z: 0
+                num sx: 3
+                num sy: 1.2
+                num sz: 3.5
+            }
+            tree variables {
+                num numlevels: 4
+                num numbays: 3
+                num capacity: 12
+                string colorcode: "0x0000FFFF"
+                string levelcolor: "0xFF8000FF"  // Orange beams
+                string category: "BLUSA_OUTDOOR"
+            }
+        }
+
+        tree Rack_B2 {
+            int objectfocus: 21
+            string class: "Rack"
+            tree spatial {
+                num x: 12
+                num y: 5
+                num z: 0
+                num sx: 3
+                num sy: 1.2
+                num sz: 3.5
+            }
+            tree variables {
+                num numlevels: 4
+                num numbays: 3
+                num capacity: 12
+                string colorcode: "0x0000FFFF"
+                string levelcolor: "0xFF8000FF"
+                string category: "PARKA_NEW"
+            }
+        }
+
+        tree Rack_B3 {
+            int objectfocus: 22
+            string class: "Rack"
+            tree spatial {
+                num x: 12
+                num y: 8
+                num z: 0
+                num sx: 3
+                num sy: 1.2
+                num sz: 3.5
+            }
+            tree variables {
+                num numlevels: 4
+                num numbays: 3
+                num capacity: 12
+                string colorcode: "0x0000FFFF"
+                string levelcolor: "0xFF8000FF"
+                string category: "CAMISA_OUTDOOR"
+            }
+        }
+
+        tree Rack_B4 {
+            int objectfocus: 23
+            string class: "Rack"
+            tree spatial {
+                num x: 12
+                num y: 11
+                num z: 0
+                num sx: 3
+                num sy: 1.2
+                num sz: 3.5
+            }
+            tree variables {
+                num numlevels: 4
+                num numbays: 3
+                num capacity: 12
+                string colorcode: "0x0000FFFF"
+                string levelcolor: "0xFF8000FF"
+                string category: "HOMBRE"
+            }
+        }
+
+        tree Rack_B5 {
+            int objectfocus: 24
+            string class: "Rack"
+            tree spatial {
+                num x: 17
+                num y: 2
+                num z: 0
+                num sx: 3
+                num sy: 1.2
+                num sz: 3.5
+            }
+            tree variables {
+                num numlevels: 4
+                num numbays: 3
+                num capacity: 12
+                string colorcode: "0x0000FFFF"
+                string levelcolor: "0xFF8000FF"
+                string category: "MUJER"
+            }
+        }
+
+        tree Rack_B6 {
+            int objectfocus: 25
+            string class: "Rack"
+            tree spatial {
+                num x: 17
+                num y: 5
+                num z: 0
+                num sx: 3
+                num sy: 1.2
+                num sz: 3.5
+            }
+            tree variables {
+                num numlevels: 4
+                num numbays: 3
+                num capacity: 12
+                string colorcode: "0x0000FFFF"
+                string levelcolor: "0xFF8000FF"
+                string category: "MUJER"
+            }
+        }
+
+        tree Rack_B7 {
+            int objectfocus: 26
+            string class: "Rack"
+            tree spatial {
+                num x: 17
+                num y: 8
+                num z: 0
+                num sx: 3
+                num sy: 1.2
+                num sz: 3.5
+            }
+            tree variables {
+                num numlevels: 4
+                num numbays: 3
+                num capacity: 12
+                string colorcode: "0x0000FFFF"
+                string levelcolor: "0xFF8000FF"
+                string category: "HOMBRE"
+            }
+        }
+
+        tree Rack_B8 {
+            int objectfocus: 27
+            string class: "Rack"
+            tree spatial {
+                num x: 17
+                num y: 11
+                num z: 0
+                num sx: 3
+                num sy: 1.2
+                num sz: 3.5
+            }
+            tree variables {
+                num numlevels: 4
+                num numbays: 3
+                num capacity: 12
+                string colorcode: "0x0000FFFF"
+                string levelcolor: "0xFF8000FF"
+                string category: "HOMBRE"
+            }
+        }
+
+        // ============================================
+        // RACKS TIPO C (2 metros) - PICKING RÁPIDO
+        // ============================================
+        tree Rack_C1 {
+            int objectfocus: 30
+            string class: "Rack"
+            tree spatial {
+                num x: 8
+                num y: 3
+                num z: 0
+                num sx: 2
+                num sy: 1
+                num sz: 2.5
+            }
+            tree variables {
+                num numlevels: 3
+                num numbays: 2
+                num capacity: 6
+                string colorcode: "0x0000FFFF"
+                string levelcolor: "0xFF8000FF"
+                string category: "PICKING_RAPIDO"
+            }
+        }
+
+        tree Rack_C2 {
+            int objectfocus: 31
+            string class: "Rack"
+            tree spatial {
+                num x: 8
+                num y: 6
+                num z: 0
+                num sx: 2
+                num sy: 1
+                num sz: 2.5
+            }
+            tree variables {
+                num numlevels: 3
+                num numbays: 2
+                num capacity: 6
+                string colorcode: "0x0000FFFF"
+                string levelcolor: "0xFF8000FF"
+                string category: "PICKING_RAPIDO"
+            }
+        }
+
+        tree Rack_C3 {
+            int objectfocus: 32
+            string class: "Rack"
+            tree spatial {
+                num x: 8
+                num y: 9
+                num z: 0
+                num sx: 2
+                num sy: 1
+                num sz: 2.5
+            }
+            tree variables {
+                num numlevels: 3
+                num numbays: 2
+                num capacity: 6
+                string colorcode: "0x0000FFFF"
+                string levelcolor: "0xFF8000FF"
+                string category: "PICKING_RAPIDO"
+            }
+        }
+
+        tree Rack_C4 {
+            int objectfocus: 33
+            string class: "Rack"
+            tree spatial {
+                num x: 8
+                num y: 12
+                num z: 0
+                num sx: 2
+                num sy: 1
+                num sz: 2.5
+            }
+            tree variables {
+                num numlevels: 3
+                num numbays: 2
+                num capacity: 6
+                string colorcode: "0x0000FFFF"
+                string levelcolor: "0xFF8000FF"
+                string category: "PICKING_RAPIDO"
+            }
+        }
+
+        // ============================================
+        // ZONA DE PACKING PRINCIPAL
+        // ============================================
+        tree Queue_PackingPrincipal {
+            int objectfocus: 40
+            string class: "Queue"
+            tree spatial {
+                num x: 6
+                num y: 7.5
+                num z: 0
+                num sx: 4
+                num sy: 3
+                num sz: 1
+            }
+            tree variables {
+                num maxcontent: 8
+                string colorcode: "0x00FF00FF"  // Green zone
+                string zonetype: "PACKING_PRINCIPAL"
+            }
+        }
+
+        tree Processor_Packing {
+            int objectfocus: 41
+            string class: "Processor"
+            tree spatial {
+                num x: 6
+                num y: 7.5
+                num z: 0
+                num sx: 2
+                num sy: 2
+                num sz: 1
+            }
+            tree variables {
+                num processtime: 600  // 10 minutos por pallet
+                string colorcode: "0x00FF00FF"
+            }
+        }
+
+        // ============================================
+        // ZONA DE PACKING ALTERNATIVA
+        // ============================================
+        tree Queue_PackingAlternativo {
+            int objectfocus: 42
+            string class: "Queue"
+            tree spatial {
+                num x: 6
+                num y: 12
+                num z: 0
+                num sx: 3
+                num sy: 2.5
+                num sz: 1
+            }
+            tree variables {
+                num maxcontent: 6
+                string colorcode: "0x00FFFFFF"  // Cyan zone
+                string zonetype: "PACKING_ALTERNATIVO"
+                string activationtrigger: "pedidos > 15 pallets"
+            }
+        }
+
+        // ============================================
+        // ZONA DE MERMA
+        // ============================================
+        tree Queue_Merma {
+            int objectfocus: 50
+            string class: "Queue"
+            tree spatial {
+                num x: 23
+                num y: 14
+                num z: 0
+                num sx: 2
+                num sy: 1.5
+                num sz: 1
+            }
+            tree variables {
+                num maxcontent: 30
+                string colorcode: "0xFF0000FF"  // Red zone
+                string zonetype: "MERMA_DEVOLUCIONES"
+                string nota: "Revisar PRIMERO antes de picking"
+            }
+        }
+
+        // ============================================
+        // EQUIPAMIENTO - APILADORA ELÉCTRICA
+        // ============================================
+        tree TaskExecuter_Apiladora {
+            int objectfocus: 60
+            string class: "TaskExecuter"
+            tree spatial {
+                num x: 10
+                num y: 7.5
+                num z: 0
+                num sx: 1.2
+                num sy: 0.7
+                num sz: 2
+            }
+            tree variables {
+                num speed: 1.5  // m/s
+                num loadtime: 30  // seconds
+                num unloadtime: 30
+                num capacity: 1500  // kg
+                string colorcode: "0xFF00FFFF"  // Magenta
+                string equiptype: "STACKER_ELECTRIC"
+            }
+        }
+
+        // ============================================
+        // TRANSPALETAS MANUALES
+        // ============================================
+        tree Operator_Transpaleta1 {
+            int objectfocus: 70
+            string class: "Operator"
+            tree spatial {
+                num x: 7
+                num y: 7.5
+                num z: 0
+                num sx: 0.5
+                num sy: 0.5
+                num sz: 1.7
+            }
+            tree variables {
+                num speed: 1.0  // m/s
+                num loadtime: 20
+                num unloadtime: 20
+                string colorcode: "0x00FFFFFF"
+                string equiptype: "PALLET_JACK_MANUAL"
+            }
+        }
+
+        tree Operator_Transpaleta2 {
+            int objectfocus: 71
+            string class: "Operator"
+            tree spatial {
+                num x: 9
+                num y: 7.5
+                num z: 0
+                num sx: 0.5
+                num sy: 0.5
+                num sz: 1.7
+            }
+            tree variables {
+                num speed: 1.0
+                num loadtime: 20
+                num unloadtime: 20
+                string colorcode: "0x00FFFFFF"
+                string equiptype: "PALLET_JACK_MANUAL"
+            }
+        }
+
+        // ============================================
+        // ZONA DE SALIDA
+        // ============================================
+        tree Sink_Salida {
+            int objectfocus: 80
+            string class: "Sink"
+            tree spatial {
+                num x: 2
+                num y: 10
+                num z: 0
+                num sx: 1
+                num sy: 1
+                num sz: 1
+            }
+            tree variables {
+                string colorcode: "0xFF0000FF"  // Red
+            }
+        }
+    }
+
+    tree statistics {
+        tree Stats {
+            string description: "Bodega Textil - 25m x 15m x 5m"
+            string created: "2025-11-09"
+            string version: "FlexSim 2024"
+        }
+    }
+}
