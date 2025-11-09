@@ -1,0 +1,358 @@
+================================================================================
+                    LAYOUT VISUAL - BODEGA TEXTIL
+                        25 metros x 15 metros
+================================================================================
+
+Vista Superior (Plano 2D):
+
+LEYENDA:
+[E/S]  = Entrada/Salida (Cortinas metálicas)
+[REC]  = Zona de Recepción
+[PKG1] = Zona de Packing Principal
+[PKG2] = Zona de Packing Alternativa
+[MER]  = Zona de Merma
+[A1-4] = Racks Tipo A (6m) - Almacenamiento masivo
+[B1-8] = Racks Tipo B (3m) - Categorizado
+[C1-4] = Racks Tipo C (2m) - Picking rápido
+  @    = Apiladora Eléctrica
+  T    = Transpaleta Manual
+  →    = Flujo principal
+  ·    = Pasillos
+
+================================================================================
+
+0m                     5m                    10m                   15m                   20m                 25m
+│                      │                      │                      │                      │                   │
+├──────────────────────┼──────────────────────┼──────────────────────┼──────────────────────┼───────────────────┤
+│                                                                                                               │ 0m
+│  ┌─────┐                                                                                                     │
+│  │ E/S │ → [  RECEPCIÓN  ] → →                                                                              │
+│  └─────┘       (4m x 3m)       ↓                                                                             │ 3m
+│                                                                                                               │
+│                           [ PKG1 ]          [C1]         [B1]         [B5]         [A1]                      │
+│                            PACK             2m           3m           3m           6m                        │
+│                           PRINCIP           PICK         BLUSA        MUJER        MASIVO                    │ 6m
+│                           (4×3m)            ····         OUTD         ····         ······                    │
+│                             T                                                                                 │
+│  ┌─────┐                   ↓                                                                                 │
+│  │ E/S │ →  →  →  →  →  @[PKG]← ← ←  ←  [C2]    ← ←  [B2]    ← ←  [B6]    ← ← [A2]                       │ 9m
+│  └─────┘                   ↓                           2m           PARKA        MUJER        MASIVO         │
+│                             ↓                           PICK        NEW          ····         ······         │
+│                             ↓                           ····        ····                                      │
+│                             ↓                                                                                 │
+│                           [ PKG2 ]          [C3]         [B3]         [B7]         [A3]                      │ 12m
+│                            PACK             2m           3m           3m           6m                        │
+│                            ALTER            PICK         CAMISA       HOMBRE       MASIVO                    │
+│                           (3×2.5m)          ····         OUTD         ····         ······                    │
+│                             T                            ····                                                 │
+│                             ↓                                                                                 │
+│                             ↓              [C4]         [B4]         [B8]         [A4]      [MER]            │ 15m
+│                             ↓               2m           3m           3m           6m        2×1.5            │
+│                             ↓               PICK         HOMBRE       HOMBRE       MASIVO    MERMA           │
+│                             ↓               ····         ····         ····         ······    ····             │
+│                             ↓                                                                                 │
+│                             └──────────────────────────────────────────────────────────────→ [SALIDA]        │
+│                                                                                                               │
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+================================================================================
+
+Vista Lateral (Corte Transversal - Eje Y):
+
+Altura
+  5m  ┌─────────────────────────────────────────────────────────────────┐
+      │                    ESPACIO LIBRE / ILUMINACIÓN                  │
+      │                                                                  │
+  4m  ├─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────────┤
+      │  4  │  4  │  4  │  4  │  4  │  4  │  4  │  4  │  4  │  4      │
+      │ NIV │ NIV │ NIV │ NIV │ NIV │ NIV │ NIV │ NIV │ NIV │ NIV     │  Racks
+  3m  ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────────┤  Tipo A
+      │  3  │  3  │  3  │  3  │  3  │  3  │  3  │  3  │  3  │  3      │  (4m)
+      │ NIV │ NIV │ NIV │ NIV │ NIV │ NIV │ NIV │ NIV │ NIV │ NIV     │
+  2m  ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────────┤  Racks
+      │  2  │  2  │  2  │  2  │  2  │  2  │  2  │  2  │  2  │  2      │  Tipo B
+      │ NIV │ NIV │ NIV │ NIV │ NIV │ NIV │ NIV │ NIV │ NIV │ NIV     │  (3.5m)
+  1m  ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────────┤
+      │  1  │  1  │  1  │  1  │  1  │  1  │  1  │  1  │  1  │  1      │  Racks
+      │ NIV │ NIV │ NIV │ NIV │ NIV │ NIV │ NIV │ NIV │ NIV │ NIV     │  Tipo C
+  0m  └──┴──┴──┴──┴──┴──┴──┴──┴──┴──┴──┴──┴──┴──┴──┴──┴──┴──┴──┴──────┘  (2.5m)
+      PISO DE BODEGA (25m x 15m)
+
+      ←─────────────────── 25 metros ─────────────────────→
+
+================================================================================
+
+DISTRIBUCIÓN DE CAPACIDAD:
+
+┌─────────────────────────────────────────────────────────────────────┐
+│                    RESUMEN DE ALMACENAMIENTO                        │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│  RACKS TIPO A (Almacenamiento Masivo)                              │
+│  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 96 pallets (36.4%)         │
+│                                                                     │
+│  RACKS TIPO B (Categorizado)                                       │
+│  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 96 pallets (36.4%)         │
+│                                                                     │
+│  RACKS TIPO C (Picking Rápido)                                     │
+│  ■■■■■■■■■■■■ 24 pallets (9.1%)                                    │
+│                                                                     │
+│  ZONAS OPERATIVAS (Recepción, Packing, Merma)                      │
+│  ■■■■■■■■■■■■■■■■■■■■ 48 pallets (18.1%)                          │
+│                                                                     │
+│  TOTAL: 264 pallets (100%)                                         │
+└─────────────────────────────────────────────────────────────────────┘
+
+================================================================================
+
+CATEGORIZACIÓN POR RACKS:
+
+┌──────────┬─────────────────────┬──────────┬──────────────────────────┐
+│   RACK   │      CATEGORÍA      │ PALLETS  │        PRODUCTOS         │
+├──────────┼─────────────────────┼──────────┼──────────────────────────┤
+│   A1     │ Almacenamiento      │    24    │ General / Sin categoría  │
+│   A2     │ Almacenamiento      │    24    │ General / Sin categoría  │
+│   A3     │ Almacenamiento      │    24    │ General / Sin categoría  │
+│   A4     │ Almacenamiento      │    24    │ General / Sin categoría  │
+├──────────┼─────────────────────┼──────────┼──────────────────────────┤
+│   B1     │ BLUSA OUTDOOR       │    12    │ Blusas deportivas        │
+│   B2     │ PARKA NEW           │    12    │ Parkas nuevas            │
+│   B3     │ CAMISA OUTDOOR      │    12    │ Camisas deportivas       │
+│   B4     │ HOMBRE              │    12    │ Ropa de hombre           │
+│   B5     │ MUJER               │    12    │ Ropa de mujer            │
+│   B6     │ MUJER               │    12    │ Ropa de mujer            │
+│   B7     │ HOMBRE              │    12    │ Ropa de hombre           │
+│   B8     │ HOMBRE              │    12    │ Ropa de hombre           │
+├──────────┼─────────────────────┼──────────┼──────────────────────────┤
+│   C1     │ PICKING RÁPIDO      │     6    │ Alta rotación            │
+│   C2     │ PICKING RÁPIDO      │     6    │ Alta rotación            │
+│   C3     │ PICKING RÁPIDO      │     6    │ Alta rotación            │
+│   C4     │ PICKING RÁPIDO      │     6    │ Alta rotación            │
+└──────────┴─────────────────────┴──────────┴──────────────────────────┘
+
+================================================================================
+
+FLUJO OPERACIONAL:
+
+1. RECEPCIÓN:
+   ┌─────────┐
+   │ Camión  │
+   └────┬────┘
+        │
+        ↓
+   ┌──────────────┐
+   │  Cortina 1   │ (3m × 3.5m)
+   │  Cortina 2   │
+   └──────┬───────┘
+          │
+          ↓
+   ┌──────────────┐
+   │  RECEPCIÓN   │ (4m × 3m) - Max 20 pallets
+   │  Verificación│
+   └──────┬───────┘
+          │
+          ↓
+   ┌──────────────────────────────────────┐
+   │  ASIGNACIÓN DE CATEGORÍA Y DESTINO   │
+   └──────┬───────────────────────────────┘
+          │
+          ├─────────────┬─────────────┬─────────────┐
+          ↓             ↓             ↓             ↓
+    [RACKS A]     [RACKS B]     [RACKS C]     [MERMA]
+    Masivo        Categoría     Alta Rot.     Especial
+
+2. PICKING:
+   ┌──────────────┐
+   │    PEDIDO    │
+   └──────┬───────┘
+          │
+          ↓
+   ┌──────────────┐
+   │ ¿En MERMA?   │ ←── REVISAR PRIMERO
+   └───┬────┬─────┘
+       │ SÍ │ NO
+       ↓    ↓
+   [MERMA] [RACKS]
+       │    │
+       └──┬─┘
+          ↓
+   ┌──────────────┐
+   │ ¿Pedido > 15 │
+   │  pallets?    │
+   └───┬────┬─────┘
+       │ SÍ │ NO
+       ↓    ↓
+   [PKG2] [PKG1]
+       │    │
+       └──┬─┘
+          ↓
+   ┌──────────────┐
+   │   PACKING    │ 10 min/pallet
+   │  Etiquetado  │
+   └──────┬───────┘
+          │
+          ↓
+   ┌──────────────┐
+   │    SALIDA    │
+   └──────────────┘
+
+================================================================================
+
+EQUIPAMIENTO - ZONAS DE OPERACIÓN:
+
+┌─────────────────────────────────────────────────────────────────────┐
+│                     APILADORA ELÉCTRICA (@)                         │
+├─────────────────────────────────────────────────────────────────────┤
+│  Ubicación inicial: Centro (10m, 7.5m)                             │
+│  Zona de operación: TODA LA BODEGA                                 │
+│  Prioridad: Altura > 2.5m                                          │
+│                                                                     │
+│  ┌────────────────────────────────────────────────────────────┐    │
+│  │                                                            │    │
+│  │    [A1] [A2] [A3] [A4] ← Niveles superiores              │    │
+│  │    [B1-B8] ← Niveles 3-4                                  │    │
+│  │                                                            │    │
+│  └────────────────────────────────────────────────────────────┘    │
+└─────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────┐
+│                   TRANSPALETAS MANUALES (T1, T2)                    │
+├─────────────────────────────────────────────────────────────────────┤
+│  T1 - Ubicación inicial: (7m, 7.5m)                                │
+│  T2 - Ubicación inicial: (9m, 7.5m)                                │
+│  Zona de operación: TODA LA BODEGA                                 │
+│  Prioridad: Altura ≤ 2.5m                                          │
+│                                                                     │
+│  ┌────────────────────────────────────────────────────────────┐    │
+│  │                                                            │    │
+│  │    [C1-C4] ← Todos los niveles                            │    │
+│  │    [B1-B8] ← Niveles 1-2                                  │    │
+│  │    [Zonas operativas] ← Packing, Recepción, Merma         │    │
+│  │                                                            │    │
+│  └────────────────────────────────────────────────────────────┘    │
+└─────────────────────────────────────────────────────────────────────┘
+
+================================================================================
+
+COORDENADAS DETALLADAS (X, Y, Z):
+
+RACKS TIPO A (6m):
+┌──────┬────────────┬────────────┬────────────┐
+│ Rack │     X      │     Y      │     Z      │
+├──────┼────────────┼────────────┼────────────┤
+│  A1  │   22.0     │    3.0     │    0.0     │
+│  A2  │   22.0     │    6.0     │    0.0     │
+│  A3  │   22.0     │    9.0     │    0.0     │
+│  A4  │   22.0     │   12.0     │    0.0     │
+└──────┴────────────┴────────────┴────────────┘
+
+RACKS TIPO B (3m):
+┌──────┬────────────┬────────────┬────────────┬──────────────────┐
+│ Rack │     X      │     Y      │     Z      │    Categoría     │
+├──────┼────────────┼────────────┼────────────┼──────────────────┤
+│  B1  │   12.0     │    2.0     │    0.0     │ BLUSA OUTDOOR    │
+│  B2  │   12.0     │    5.0     │    0.0     │ PARKA NEW        │
+│  B3  │   12.0     │    8.0     │    0.0     │ CAMISA OUTDOOR   │
+│  B4  │   12.0     │   11.0     │    0.0     │ HOMBRE           │
+│  B5  │   17.0     │    2.0     │    0.0     │ MUJER            │
+│  B6  │   17.0     │    5.0     │    0.0     │ MUJER            │
+│  B7  │   17.0     │    8.0     │    0.0     │ HOMBRE           │
+│  B8  │   17.0     │   11.0     │    0.0     │ HOMBRE           │
+└──────┴────────────┴────────────┴────────────┴──────────────────┘
+
+RACKS TIPO C (2m):
+┌──────┬────────────┬────────────┬────────────┐
+│ Rack │     X      │     Y      │     Z      │
+├──────┼────────────┼────────────┼────────────┤
+│  C1  │    8.0     │    3.0     │    0.0     │
+│  C2  │    8.0     │    6.0     │    0.0     │
+│  C3  │    8.0     │    9.0     │    0.0     │
+│  C4  │    8.0     │   12.0     │    0.0     │
+└──────┴────────────┴────────────┴────────────┘
+
+ZONAS OPERATIVAS:
+┌──────────────────┬─────────┬─────────┬─────────┬──────────┬──────────┐
+│      Zona        │    X    │    Y    │    Z    │  Ancho   │   Largo  │
+├──────────────────┼─────────┼─────────┼─────────┼──────────┼──────────┤
+│ Entrada/Salida   │   2.0   │   7.5   │   0.0   │   3.0m   │   3.5m   │
+│ Recepción        │   4.0   │   7.5   │   0.0   │   4.0m   │   3.0m   │
+│ Packing Principal│   6.0   │   7.5   │   0.0   │   4.0m   │   3.0m   │
+│ Packing Alternat.│   6.0   │  12.0   │   0.0   │   3.0m   │   2.5m   │
+│ Merma            │  23.0   │  14.0   │   0.0   │   2.0m   │   1.5m   │
+└──────────────────┴─────────┴─────────┴─────────┴──────────┴──────────┘
+
+EQUIPAMIENTO:
+┌──────────────────────┬─────────┬─────────┬─────────┐
+│      Equipo          │    X    │    Y    │    Z    │
+├──────────────────────┼─────────┼─────────┼─────────┤
+│ Apiladora Eléctrica  │  10.0   │   7.5   │   0.0   │
+│ Transpaleta 1        │   7.0   │   7.5   │   0.0   │
+│ Transpaleta 2        │   9.0   │   7.5   │   0.0   │
+│ Sink Salida          │   2.0   │  10.0   │   0.0   │
+└──────────────────────┴─────────┴─────────┴─────────┘
+
+================================================================================
+
+DISTANCIAS CRÍTICAS:
+
+Entrada → Recepción:                 2.0 m
+Recepción → Packing Principal:       2.0 m
+Packing Principal → Racks C:         2.0 m
+Racks C → Racks B:                   4.0 m
+Racks B → Racks A:                   5.0 m
+Packing Principal → Packing Alter:   4.5 m
+Racks A → Merma:                     1.0 m
+Packing → Salida:                    4.0 m
+
+Distancia máxima (Entrada → Fondo): 23.0 m
+Distancia máxima (Lateral):         15.0 m
+
+================================================================================
+
+CODIFICACIÓN DE COLORES (Hexadecimal RGBA):
+
+┌──────────────────────────┬─────────────┬──────────────────────┐
+│        Elemento          │    Color    │   Código Hex         │
+├──────────────────────────┼─────────────┼──────────────────────┤
+│ Piso de bodega           │ Gris        │ 0x808080FF           │
+│ Columnas de racks        │ Azul        │ 0x0000FFFF           │
+│ Vigas amarillas (Tipo A) │ Amarillo    │ 0xFFFF00FF           │
+│ Vigas naranjas (Tipo B/C)│ Naranja     │ 0xFF8000FF           │
+│ Zona Recepción           │ Amarillo    │ 0xFFFF00FF           │
+│ Zona Packing Principal   │ Verde       │ 0x00FF00FF           │
+│ Zona Packing Alternativo │ Cian        │ 0x00FFFFFF           │
+│ Zona Merma               │ Rojo        │ 0xFF0000FF           │
+│ Apiladora                │ Magenta     │ 0xFF00FFFF           │
+│ Transpaletas             │ Cian        │ 0x00FFFFFF           │
+│ Pallets HOMBRE           │ Azul        │ 0x0000FFFF           │
+│ Pallets MUJER            │ Magenta     │ 0xFF00FFFF           │
+│ Pallets OTROS            │ Amarillo    │ 0xFFFF00FF           │
+│ Sink Salida              │ Rojo        │ 0xFF0000FF           │
+└──────────────────────────┴─────────────┴──────────────────────┘
+
+================================================================================
+
+ESTADÍSTICAS ESPERADAS (8 horas de simulación):
+
+┌────────────────────────────────────┬──────────────┬──────────┐
+│              KPI                   │    Valor     │  Unidad  │
+├────────────────────────────────────┼──────────────┼──────────┤
+│ Pallets procesados (total)         │   90-96      │  pallets │
+│ Throughput promedio                │   11-12      │  pal/hr  │
+│ Utilización de racks               │   60-70%     │    %     │
+│ Tiempo promedio en sistema         │   80-90      │  minutos │
+│ Utilización apiladora              │   65-70%     │    %     │
+│ Utilización transpaletas           │   50-55%     │    %     │
+│ Activaciones packing alternativo   │    2-4       │  veces   │
+│ Uso de merma                       │   10-15%     │    %     │
+└────────────────────────────────────┴──────────────┴──────────┘
+
+================================================================================
+
+FIN DEL LAYOUT VISUAL
+
+Archivo generado: 2025-11-09
+Versión: 1.0
+Compatibilidad: FlexSim 2019+
+
+================================================================================

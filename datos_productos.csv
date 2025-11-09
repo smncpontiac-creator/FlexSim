@@ -1,0 +1,51 @@
+ID_Producto,Categoria,Subcategoria,Nombre_Producto,Genero,Rotacion,Cajas_Por_Pallet,Peso_Kg,Rack_Asignado
+P001,BLUSA_OUTDOOR,Blusas,Blusa Deportiva Térmica,MUJER,ALTA,25,450,B1
+P002,BLUSA_OUTDOOR,Blusas,Blusa Running Manga Larga,MUJER,ALTA,30,380,B1
+P003,BLUSA_OUTDOOR,Blusas,Blusa Trekking Impermeable,MUJER,NORMAL,28,420,B1
+P004,PARKA_NEW,Parkas,Parka Invierno Nueva,HOMBRE,NORMAL,20,620,B2
+P005,PARKA_NEW,Parkas,Parka Urbana Nueva,MUJER,ALTA,22,580,B2
+P006,PARKA_NEW,Parkas,Parka Técnica Nueva,HOMBRE,NORMAL,24,650,B2
+P007,CAMISA_OUTDOOR,Camisas,Camisa Trekking Manga Corta,HOMBRE,ALTA,35,320,B3
+P008,CAMISA_OUTDOOR,Camisas,Camisa Hiking UPF 50+,HOMBRE,NORMAL,32,340,B3
+P009,CAMISA_OUTDOOR,Camisas,Camisa Outdoor Convertible,HOMBRE,ALTA,30,360,B3
+P010,HOMBRE,Pantalones,Pantalón Cargo Trekking,HOMBRE,NORMAL,28,480,B4
+P011,HOMBRE,Pantalones,Pantalón Convertible Outdoor,HOMBRE,ALTA,26,440,B7
+P012,HOMBRE,Shorts,Short Deportivo Running,HOMBRE,ALTA,40,280,C1
+P013,HOMBRE,Poleras,Polera Técnica Dry-Fit,HOMBRE,ALTA,45,250,C2
+P014,HOMBRE,Chaquetas,Chaqueta Softshell,HOMBRE,NORMAL,22,520,B8
+P015,HOMBRE,Chaquetas,Chaqueta Plumas,HOMBRE,NORMAL,18,580,B4
+P016,MUJER,Pantalones,Pantalón Yoga Térmico,MUJER,ALTA,35,380,C3
+P017,MUJER,Pantalones,Pantalón Trekking Mujer,MUJER,NORMAL,28,420,B5
+P018,MUJER,Calzas,Calza Running Compresión,MUJER,ALTA,50,220,C1
+P019,MUJER,Poleras,Polera Deportiva Mujer,MUJER,ALTA,45,240,C4
+P020,MUJER,Chaquetas,Chaqueta Polar Mujer,MUJER,NORMAL,24,460,B6
+P021,MUJER,Chaquetas,Chaqueta Impermeable,MUJER,NORMAL,20,520,B5
+P022,HOMBRE,Chalecos,Chaleco Plumas Hombre,HOMBRE,NORMAL,22,380,B7
+P023,MUJER,Chalecos,Chaleco Plumas Mujer,MUJER,NORMAL,22,360,B6
+P024,GENERAL,Accesorios,Gorro Térmico,UNISEX,ALTA,60,180,C2
+P025,GENERAL,Accesorios,Guantes Trekking,UNISEX,ALTA,55,160,C3
+P026,GENERAL,Accesorios,Buff Multifunción,UNISEX,ALTA,80,120,C4
+P027,GENERAL,Mochilas,Mochila 30L Trekking,UNISEX,NORMAL,15,680,A1
+P028,GENERAL,Mochilas,Mochila 50L Camping,UNISEX,NORMAL,12,820,A2
+P029,GENERAL,Calzado,Zapatillas Trekking Hombre,HOMBRE,NORMAL,18,720,A3
+P030,GENERAL,Calzado,Zapatillas Trail Running,UNISEX,NORMAL,20,680,A4
+P031,GENERAL,Calzado,Botas Montaña Hombre,HOMBRE,NORMAL,14,860,A1
+P032,GENERAL,Calzado,Zapatillas Urbanas Mujer,MUJER,NORMAL,22,580,A2
+P033,HOMBRE,Bermudas,Bermuda Outdoor Hombre,HOMBRE,ALTA,36,320,B8
+P034,HOMBRE,Poleras,Polera Merino Wool,HOMBRE,NORMAL,30,380,B4
+P035,MUJER,Vestidos,Vestido Deportivo,MUJER,NORMAL,32,280,B5
+P036,MUJER,Shorts,Short Running Mujer,MUJER,ALTA,42,240,C1
+P037,GENERAL,Carpas,Carpa 2 Personas,UNISEX,NORMAL,8,1200,A3
+P038,GENERAL,Carpas,Carpa 4 Personas,UNISEX,NORMAL,6,1450,A4
+P039,GENERAL,Bolsas,Bolsa Dormir 0°C,UNISEX,NORMAL,16,780,A1
+P040,GENERAL,Bolsas,Bolsa Dormir -10°C,UNISEX,NORMAL,14,920,A2
+P041,HOMBRE,Cortavientos,Cortaviento Running Hombre,HOMBRE,ALTA,28,340,C2
+P042,MUJER,Cortavientos,Cortaviento Running Mujer,MUJER,ALTA,28,320,C3
+P043,GENERAL,Equipamiento,Bastones Trekking,UNISEX,NORMAL,24,480,A3
+P044,GENERAL,Equipamiento,Colchoneta Camping,UNISEX,NORMAL,20,520,A4
+P045,HOMBRE,Buzos,Buzo Polar Hombre,HOMBRE,NORMAL,25,540,B7
+P046,MUJER,Buzos,Buzo Polar Mujer,MUJER,NORMAL,25,520,B6
+P047,GENERAL,Accesorios,Linterna Frontal LED,UNISEX,ALTA,70,140,C4
+P048,GENERAL,Accesorios,Botella Térmica 1L,UNISEX,ALTA,40,380,C1
+P049,GENERAL,Accesorios,Mochila Hidratación 2L,UNISEX,NORMAL,18,420,A1
+P050,GENERAL,Accesorios,Set Bastones Ajustables,UNISEX,NORMAL,20,560,A2
